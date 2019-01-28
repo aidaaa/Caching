@@ -8,7 +8,7 @@ import dagger.Component;
  * Created by Aida on 1/28/2019.
  */
 
-@Component
+@Component()
 
 public interface AppComponent
 {
