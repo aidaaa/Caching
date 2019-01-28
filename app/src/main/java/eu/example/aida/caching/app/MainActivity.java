@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements LoadData{
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+
+
     }
 
     @Override
