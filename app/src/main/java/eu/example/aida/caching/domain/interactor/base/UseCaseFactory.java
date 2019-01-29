@@ -1,5 +1,7 @@
 package eu.example.aida.caching.domain.interactor.base;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.domain.interactor.GetMoviesUseCase;
 import eu.example.aida.caching.domain.repository.Repository;
 

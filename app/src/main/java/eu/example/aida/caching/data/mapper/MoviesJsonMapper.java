@@ -2,6 +2,8 @@ package eu.example.aida.caching.data.mapper;
 
 import com.google.gson.Gson;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.data.model.MoviesData;
 
 /**

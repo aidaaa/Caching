@@ -4,6 +4,8 @@ import android.content.Context;
 
 import java.io.File;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.data.model.MoviesData;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -27,6 +29,7 @@ public class MoviesCacheImpl implements MoviesCache
     {
         this.fileM = fileM;
         this.toJson=toJson;
+        System.out.println(context.getCacheDir()+"majid23");
         this.file=context.getCacheDir();
     }
 

@@ -24,8 +24,8 @@ import eu.example.aida.caching.platform.scope.ViewScope;
  * Created by Aida on 1/28/2019.
  */
 
-@ViewScope
 @Module
+
 public class NewModule
 {
     @ViewScope

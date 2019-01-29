@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 /**
  * Created by Aida on 1/20/2019.
  */
@@ -21,7 +23,11 @@ public class FileManagment
 
     //exist
 
-    public void writeJsonDataMovie(File name,String s)
+
+    public FileManagment() {
+    }
+
+    public void writeJsonDataMovie(File name, String s)
     {
         if (isExist(name))
         {

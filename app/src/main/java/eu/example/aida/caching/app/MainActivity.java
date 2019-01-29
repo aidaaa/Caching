@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import eu.example.aida.caching.R;
@@ -23,13 +25,17 @@ import eu.example.aida.caching.data.net.RestApiImpl;
 import eu.example.aida.caching.domain.interactor.base.UseCaseFactory;
 import eu.example.aida.caching.domain.model.MoviesDomain;
 import eu.example.aida.caching.domain.repository.Repository;
+import eu.example.aida.caching.platform.component.DaggerNewComponent;
+import eu.example.aida.caching.platform.module.NewModule;
 
 public class MainActivity extends AppCompatActivity implements LoadData{
 
     @BindView(R.id.recycler)
     RecyclerView recyclerView;
 
-    Presenter presenter;
+    @Inject
+    public Presenter presenter;
+
     Apdater1 adapter;
 
     @Override
@@ -39,26 +45,16 @@ public class MainActivity extends AppCompatActivity implements LoadData{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        MoviesJsonMapper mapper=new MoviesJsonMapper();
-
-        RestApi restApi=new RestApiImpl(mapper);
-
-        FileManagment fileManagment=new FileManagment();
-
-        ToJson toJson=new ToJson();
-
-        MoviesCache moviesCache=new MoviesCacheImpl(this,fileManagment,toJson);
-
-        DataStoreFactory dataStoreFactory=new DataStoreFactory(restApi,moviesCache);
-
-        Repository repository=new RepositoryImpl(dataStoreFactory);
-
-        UseCaseFactory factory=new UseCaseFactory(repository);
-
-        presenter=new Presenter(factory);
-        presenter.init(this);
 
         init();
+
+      DaggerNewComponent.builder()
+                .appComponent(App.getApp().getAppComponent(this))
+                .newModule(new NewModule())
+                .build()
+                .inject(this);
+
+        presenter.init(this);
     }
 
     private void init()

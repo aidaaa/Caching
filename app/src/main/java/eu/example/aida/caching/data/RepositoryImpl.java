@@ -1,5 +1,7 @@
 package eu.example.aida.caching.data;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.data.factory.DataStoreFactory;
 import eu.example.aida.caching.data.mapper.Mapper;
 import eu.example.aida.caching.domain.model.MoviesDomain;

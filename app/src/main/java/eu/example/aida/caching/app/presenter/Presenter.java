@@ -2,6 +2,8 @@ package eu.example.aida.caching.app.presenter;
 
 import java.lang.ref.WeakReference;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.app.view.LoadData;
 import eu.example.aida.caching.domain.interactor.base.UseCase;
 import eu.example.aida.caching.domain.interactor.base.UseCaseFactory;
@@ -19,6 +21,7 @@ public class Presenter extends DisposableObserver<MoviesDomain>
     private UseCase useCase;
     private WeakReference<LoadData> view;
 
+    @Inject
     public Presenter(UseCaseFactory factory)
     {
         this.factory = factory;

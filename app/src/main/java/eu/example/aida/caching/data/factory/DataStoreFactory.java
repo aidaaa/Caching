@@ -1,5 +1,7 @@
 package eu.example.aida.caching.data.factory;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.data.cache.MoviesCache;
 import eu.example.aida.caching.data.factory.impl.CacheImpl;
 import eu.example.aida.caching.data.factory.impl.DataStoreImpl;

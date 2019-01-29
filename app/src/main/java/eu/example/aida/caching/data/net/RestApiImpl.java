@@ -2,6 +2,8 @@ package eu.example.aida.caching.data.net;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 import eu.example.aida.caching.data.mapper.MoviesJsonMapper;
 import eu.example.aida.caching.data.model.MoviesData;
 import io.reactivex.Observable;

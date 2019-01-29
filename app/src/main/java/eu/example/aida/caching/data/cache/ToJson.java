@@ -5,6 +5,8 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 
+import javax.inject.Inject;
+
 /**
  * Created by Aida on 1/21/2019.
  */
